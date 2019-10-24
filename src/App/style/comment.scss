@@ -1,0 +1,276 @@
+html{
+    touch-action: pan-y;
+    background: #f5f5f5;
+}
+body{
+    margin:0;padding:0;
+    -webkit-user-drag: none;
+    -webkit-touch-callout: none;
+    width: 100%;
+    height: 100vh;
+}
+.doc{ padding: 0.5rem;}
+.doc h2{font-size: 25px;color: #333;font-weight: 400;
+    font-family: Lato,Helvetica Neue For Number,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Helvetica Neue,Helvetica,Arial,sans-serif;}
+
+.transf, .transf .pages{
+    /*transition: all 0.2s;*/
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+}
+.doc-enter {
+    transform: translate3d(0%,0%,0);
+    position: absolute;
+    width: 100vw;
+}
+.doc-leave {
+    transform: translate3d(100%,0%,0);
+    position: absolute;
+    width: 100vw;
+}
+.doc-leave-end {
+    transform: translate3d(-100%,0%,0);
+    position: absolute;
+    width: 100vw;
+}
+
+
+.title-enter {
+    transform: translate3d(0%,0%,0);
+    position: absolute;
+    opacity: 1;
+}
+.title-leave {
+    transform: translate3d(100%,0%,0);
+    position: absolute;
+    opacity: 0;
+}
+.title-leave-end {
+    transform: translate3d(-100%,0%,0);
+    position: absolute;
+    opacity: 0;
+}
+
+.pageContent{
+    position: absolute;
+    width: 100vw;
+    min-height: 100vh;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.has-header{
+    padding-top: 3rem;
+    height: 100vh;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.min-content{
+    min-height: calc(100vh - 10rem)
+}
+.carousel-container{
+    .carousel-dot{
+        width: 0.4rem!important;
+        height: 0.4rem!important;
+        border-radius: 0.5rem!important;
+        &.active{
+            background: transparent;
+            border: 1px solid #fff;
+        }
+        &.default{
+            background: #fff;
+        }
+
+    }
+}
+
+.articles{
+    .image-package{
+        width: 100%!important;
+    }
+    img{
+        width: 100%;
+    }
+}
+
+@-webkit-keyframes opac{
+    from {
+        opacity: 1;
+        width:0;
+        height:0;
+        top:50%;
+        left:50%;
+    }
+    to {
+        opacity : 0;
+        width:100%;
+        height:100%;
+        top:0;
+        left:0;
+    }
+}
+.animate .w2{
+    -webkit-animation-delay:1s;
+}
+.animate .w3{
+    -webkit-animation-delay:2s;
+}
+.animate .w4{
+    -webkit-animation-delay:3s;
+}
+.wave{
+    width: 22.7rem;
+    height: 22.7rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+.wave *{
+    border:1px solid #fff;
+    position:absolute;
+    border-radius:50%;
+    -webkit-animation:opac 4s infinite;
+}
+
+.water {  
+    position: relative;
+}  
+.water:before,.water:after{  
+       content: "";  
+       position: absolute;  
+       width: 100%;  
+       height: 400px;  
+       top: 0;  
+       left: 50%;  
+       background-color: rgba(255, 255, 255, .4); 
+       border-radius: 45%;  
+       transform: translate(-50%, -70%) rotate(0);  
+       animation: rotate 6s linear infinite;  
+       z-index: 10;  
+}  
+       
+.water:after {  
+       border-radius: 47%;  
+       background-color: rgba(255, 255, 255, .9);  
+       transform: translate(-50%, -70%) rotate(0);  
+       animation: rotate 10s linear -5s infinite;  
+       z-index: 20;  
+}  
+  
+@keyframes rotate {  
+    50% {  
+        transform: translate(-50%, -70%) rotate(180deg);  
+    } 100% {  
+        transform: translate(-50%, -70%) rotate(360deg);  
+    }  
+}  
+
+
+.img_bg{
+    background-size:240%!important;
+    background-position: 12% 10% !important;
+    -webkit-filter: blur(10px)!important;
+}
+
+.music-round{
+    background: #333;
+    border:5px solid rgba(0,0,0,0.4);
+    width: 60vw;
+    height: 60vw;
+    border-radius: 50%;
+    background-clip: padding-box;
+    animation: move-the-object 10s linear infinite;
+}
+
+@keyframes move-the-object {  
+    0%   {
+        transform: rotate(0deg);
+    }
+    50%   {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+} 
+
+.lyc-bg{
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(255, 255, 255, 0)), to(#fff));
+    background: -moz-linear-gradient(top, rgba(255, 255, 255, 0), #fff);
+    background: -o-linear-gradient(top, rgba(255, 255, 255, 0), #fff);
+    background: linear-gradient(top, rgba(255, 255, 255, 0), #fff);
+    
+    box-shadow:  0px 0px 25px 0px #fff;
+}
+
+.scroller{
+    scrollbar-arrow-color: #f4ae21; /**//*三角箭头的颜色*/ 
+    scrollbar-face-color: #666; /**//*立体滚动条的颜色*/ 
+    scrollbar-3dlight-color: #666; /**//*立体滚动条亮边的颜色*/ 
+    scrollbar-highlight-color: #666; /**//*滚动条空白部分的颜色*/ 
+    scrollbar-shadow-color: #999; /**//*立体滚动条阴影的颜色*/ 
+    scrollbar-darkshadow-color: #666; /**//*立体滚动条强阴影的颜色*/ 
+    scrollbar-track-color: #666; /**//*立体滚动条背景颜色*/ 
+    scrollbar-base-color:#f8f8f8; /**//*滚动条的基本颜色*/
+}
+.scroller-thin{
+    scrollbar-arrow-color: #666; /**//*三角箭头的颜色*/ 
+    scrollbar-face-color: #666; /**//*立体滚动条的颜色*/ 
+    scrollbar-3dlight-color: #666; /**//*立体滚动条亮边的颜色*/ 
+    scrollbar-highlight-color: #666; /**//*滚动条空白部分的颜色*/ 
+    scrollbar-shadow-color: #999; /**//*立体滚动条阴影的颜色*/ 
+    scrollbar-darkshadow-color: #666; /**//*立体滚动条强阴影的颜色*/ 
+    scrollbar-track-color: #666; /**//*立体滚动条背景颜色*/ 
+    scrollbar-base-color:#666; /**//*滚动条的基本颜色*/
+}
+.scroller-thin::-webkit-scrollbar{/*滚动条整体部分，其中的属性有width,height,background,border等（就和一个块级元素一样）（位置1）*/
+    width:5px;
+    height:5px;
+}
+
+.scroller::-webkit-scrollbar{/*滚动条整体部分，其中的属性有width,height,background,border等（就和一个块级元素一样）（位置1）*/
+    width:5px;
+    height:5px;
+}
+.scroller::-webkit-scrollbar-button{/*滚动条两端的按钮，可以用display:none让其不显示，也可以添加背景图片，颜色改变显示效果（位置2）*/
+    background:transparent;
+    width: 0;
+}
+.scroller::-webkit-scrollbar-track{/*外层轨道，可以用display:none让其不显示，也可以添加背景图片，颜色改变显示效果（位置3）*/
+    background:transparent;
+}
+.scroller::-webkit-scrollbar-track-piece{/*内层轨道，滚动条中间部分（位置4）*/
+    background:transparent;
+}
+.scroller::-webkit-scrollbar-thumb{/*滚动条里面可以拖动的那部分（位置5）*/
+    background:#999;
+    border-radius:3rem;
+    // box-shadow:  0px 0px 25px 0px rgba(0, 0, 0, 0.9)
+}
+.scroller::-webkit-scrollbar-corner {/*边角（位置6）*/
+    background:#999; 
+}
+.scroller::-webkit-scrollbar-resizer  {/*定义右下角拖动块的样式（位置7）*/
+    background:#999;
+}
+
+.scroller-thin::-webkit-scrollbar-button{/*滚动条两端的按钮，可以用display:none让其不显示，也可以添加背景图片，颜色改变显示效果（位置2）*/
+    background:transparent;
+    width: 0;
+}
+.scroller-thin::-webkit-scrollbar-track{/*外层轨道，可以用display:none让其不显示，也可以添加背景图片，颜色改变显示效果（位置3）*/
+    background:transparent;
+}
+.scroller-thin::-webkit-scrollbar-track-piece{/*内层轨道，滚动条中间部分（位置4）*/
+    background:transparent;
+}
+.scroller-thin::-webkit-scrollbar-thumb{/*滚动条里面可以拖动的那部分（位置5）*/
+    background:#999;
+    border-radius:3rem;
+    // box-shadow:  0px 0px 25px 0px rgba(0, 0, 0, 0.9)
+}
